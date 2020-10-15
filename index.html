@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rock Paper Scissors Shoot!</h1>
+    <script>
+        var comprps = ["r", "p", "s"]
+        var playwins = 0
+        var compwins = 0
+        var ties = 0
+
+        for (var i = 0; i < 10; i++) {
+        // Generate a random decimal number between 0 and 1
+            var playerrps = prompt("choose r p or s for rock paper scissors");
+            var num = Math.floor(Math.random() * 3);
+            // Display in console
+            console.log(comprps[num]);
+            
+            if (comprps[num] == playerrps) {
+                alert("Tie game!");
+                ties++;
+       
+            } else if (comprps == "r" || playerrps == "s") {
+                alert("Computerwins!");
+                compwins++;
+            }
+            console.log(comprps);
+            console.log(playerrps)
+        }
+
+
+
+    
+
+
+
+
+    </script>
+
+</body>
+</html>
