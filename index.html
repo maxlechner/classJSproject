@@ -17,19 +17,22 @@
         // Generate a random decimal number between 0 and 1
             var playerrps = prompt("choose r p or s for rock paper scissors");
             var num = Math.floor(Math.random() * 3);
-            // Display in console
-            console.log(comprps[num]);
+         
+
+            console.log("computer chooses " + comprps[num]);
+            console.log("player chooses " + playerrps);
             
             if (comprps[num] == playerrps) {
                 alert("Tie game!");
                 ties++;
-       
-            } else if (comprps == "r" || playerrps == "s") {
-                alert("Computerwins!");
+            } else if (comprps == "r" && playerrps == "s") {
+                alert("Computer wins!");
                 compwins++;
+            } else if (comprps == "p" && playerrps == "s") {
+                alert("Player wins!")
+                playwins++;
             }
-            console.log(comprps);
-            console.log(playerrps)
+
         }
 
 
