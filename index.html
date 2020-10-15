@@ -10,50 +10,34 @@
     <h1>Rock Paper Scissors Shoot!</h1>
     
     <script>
-        // define 
+        // define variables used for the array and the inputs from computer and user wins
         var comprps = ["r", "p", "s"]
         var playwins = 0
         var compwins = 0
         var ties = 0
 
         for (var i = 0; i < 4; i++) {
-        // Generate a random decimal number between 0 and 1
+        // Generate a random decimal number between 0 and 3
+            // prompt the user to submit r p or s
             var playerrps = prompt("choose r p or s for rock paper scissors");
             var num = Math.floor(Math.random() * 3);
-
-            // present the choices between player and computer using an alert value
-            alert("computer chooses " + comprps[num] + " player chooses " + playerrps)
             
-            // evaluate the rps selection of the computer and user to detemine a tie
+            // evaluate the rps selection of the computer and user to detemine a tie then iterate through the comparative values
             if (comprps[num] == playerrps) {
-                alert("Tie game!");
+                alert("computer chooses " + comprps[num] + " player chooses " + playerrps + "\nTie game!");
                 ties++; 
-            } else if (comprps[num] == "r" && playerrps == "s") { 
-                alert("Computer wins!");
+            } else if ((comprps[num] == "r" && playerrps == "s") || (comprps[num] == "p" && playerrps == "r") || (comprps[num] == "s" && playerrps == "p")) { 
+                alert("computer chooses " + comprps[num] + " player chooses " + playerrps + "\nComputer wins!");
                 compwins++;
-            } else if (comprps[num] == "p" && playerrps == "s") {
-                alert("Player wins!")
+            } else if ((comprps[num] == "p" && playerrps == "s") || (comprps[num] == "s" && playerrps == "r") || (comprps[num] == "r" && playerrps == "p")) {
+                alert("computer chooses " + comprps[num] + " player chooses " + playerrps + "\nPlayer wins!");
                 playwins++;
-            } else if (comprps[num] == "s" && playerrps == "r") {
-                alert("Player wins!")
-                playwins++;
-            } else if (comprps[num] == "p" && playerrps == "r") {
-                alert("Computer wins!")
-                compwins++;
-            } else if (comprps[num] == "r" && playerrps == "p") {
-                alert("Player wins!")
-                playwins++;
-            } else if (comprps[num] == "s" && playerrps == "p") {
-                alert("Computer wins!")
-                compwins++;
-            }
-
+            } 
         }
-
         // alert to present the overall wins and ties for each player
 
         alert("Player wins = " + playwins + "\nComputer wins = " + compwins + "\nTies = " + ties);
-        
+
     </script>
 
 </body>
